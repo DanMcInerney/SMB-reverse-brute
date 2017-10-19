@@ -1,0 +1,8 @@
+*.pyc
+*.swp
+*.nmap
+*.gnmap
+*.xml
+*.txt
+Pipfile
+Pipfile.lock
