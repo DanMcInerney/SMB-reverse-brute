@@ -7,8 +7,8 @@ Performs a 2 password reverse bruteforce against any hosts with NULL SMB session
 * Attempts a NULL SMB session (connecting over SMB without a password)
 * On success will perform RID cycling to gather domain usernames
 * Prevents account lockout by creating list of unique usernames and bruteforcing each one with two passwords:
-** P@ssw0rd
-** <Season><year> such as Summer2017
+  * P@ssw0rd
+  * `<Current_season><current_year>` such as Summer2017
 
 
 #### Installation
