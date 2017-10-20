@@ -56,11 +56,11 @@ def nmap_scan(hosts):
     # This is top 1000 tcp + top 50 UDP scan
     # Nmap has chosen not to do --top-udp/tcp-ports options due to not wanting to overcomplicate
     # the cmd line interface
-    nmap_args = '-sS -n -v --reason --max-retries 5 -p 445 -oA SMB-reverse-brute-nmap'
+    nmap_args = '-sS -n --max-retries 5 -p 445 -oA smb-scan'
     nmap_proc = NmapProcess(targets=hosts, options=nmap_args, safe_mode=False)
     rc = nmap_proc.sudo_run_background()
     nmap_status_printer(nmap_proc)
-    report = NmapParser.parse_fromfile(os.getcwd()+'/SMB-reverse-brute-nmap.xml')
+    report = NmapParser.parse_fromfile(os.getcwd()+'/smb-scan.xml')
 
     return report
 
@@ -309,6 +309,7 @@ def parse_brute_output(brute_output):
     '''
     Parse the chunk of rpcclient attempted logins
     '''
+    print('[*] Checking passwords against accounts')
     pw_found = False
     for line in brute_output:
         # Missing second line of output means we have a hit

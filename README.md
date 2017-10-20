@@ -18,8 +18,9 @@ cd SMB-reverse-brute
 git submodule init
 git submodule update
 pip install pipenv
-pipenv install
+pipenv --three install
 pipenv shell
+python SMB-reverse-brute.py -x/-l ...
 
 ```
 
