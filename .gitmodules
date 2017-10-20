@@ -1,0 +1,3 @@
+[submodule "ridenum"]
+	path = ridenum
+	url = https://github.com/DanMcInerney/ridenum
