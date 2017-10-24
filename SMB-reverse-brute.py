@@ -68,11 +68,15 @@ def nmap_status_printer(nmap_proc):
     '''
     Prints that Nmap is running
     '''
-    i = -1
+    i = -1 
     while nmap_proc.is_running():
         i += 1
-        print("[*] Nmap running: {} min".format(str(i)))
-        time.sleep(60)
+        x = -.5
+        # Every 30 seconds print that Nmap is still running
+        if i % 30 == 0:
+            x += .5
+            print("[*] Nmap running: {} min".format(str(i)))
+        time.sleep(1)
 
 def get_hosts(report):
     '''
