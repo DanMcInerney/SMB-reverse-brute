@@ -15,13 +15,8 @@ Performs a 2 password reverse bruteforce against any hosts with NULL SMB session
 ```
 git clone https://github.com/DanMcInerney/SMB-reverse-brute
 cd SMB-reverse-brute
-git submodule init
-git submodule update
-pip install pipenv
-pipenv --three install
+./install.sh
 pipenv shell
-python SMB-reverse-brute.py -x/-l ...
-
 ```
 
 #### Usage
